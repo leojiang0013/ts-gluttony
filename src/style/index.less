@@ -1,26 +1,77 @@
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font: bold 20px "Courier";
+	font: bold 20px "Courier";
 }
+
 #main {
-    width: 360px;
-    height: 420px;
-    background-color: #b7d4a8;
-    margin: 100px auto;
-    border: 10px solid black;
-    border-radius: 10px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-around;
-    #stage {
-        width: 304px;
-        height: 304px;
-        border: 2px solid black;
+	width: 360px;
+	height: 420px;
+	background-color: #b7d4a8;
+	margin: 100px auto;
+	border: 10px solid black;
+	border-radius: 10px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-around;
+
+	#stage {
+		width: 304px;
+		height: 304px;
+		border: 2px solid black;
+		position: relative;
+
+		#snake {
+			& > div {
+				width: 10px;
+				height: 10px;
+				background-color: #000;
+				border: 1px solid #b7d4a8;
+				position: absolute;
+			}
+		}
+		#food {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			// left: calc(~"`Math.round(Math.random() * 29)*10`px");
+			// top: ~"`Math.round(Math.random() * 29)*10`px";
+            left: 100px;
+			top: 100px;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-content: space-between;
+
+			& > div {
+				width: 4px;
+				height: 4px;
+				background-color: #000;
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	#scorepanel {
+		width: 300px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+    #button {
+        width: 300px;
+		display: flex;
+		justify-content: space-between;
+
+        &>button {
+            font: bold 20px "Courier";
+            background-color: #aaa;
+        }
     }
 }
